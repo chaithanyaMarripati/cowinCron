@@ -22,7 +22,7 @@ cron.schedule("*/5 * * * *", async () => {
       const result = await cronByPinUseCase(cronDoc.pinCode);
       console.log(cronDoc);
       if (result) {
-        await sendMessage(cronDoc.chatId,`please find the vaccine related info\n${result}`);
+        await sendMessage(cronDoc.chatId, `please find the vaccine related info\n${JSON.stringify(result)}`);
       }
     })
   } catch (error) {
